@@ -1,0 +1,7 @@
+<button routerLink="/">Home</button>
+<div class="row columns">
+  <input type="text" id="message" placeholder="Search users here" (keyup.enter)="Send($event.target.value)" [(ngModel)]="msgVal" />
+</div>
+<div id="details-container">
+  <p *ngFor="let item of items | async" [class.selected]="user === selectedUser" (click)="onSelect(user)" >{{item.user}}<br>{{item.title}}<br>{{item.location}}<img id="user_img" [src]="item.img"/></p>
+</div>
